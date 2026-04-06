@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dpbu7okvqxxnr"]
+
+[ext_resource type="Script" uid="uid://ctxjabj1am3rw" path="res://scripts/building.gd" id="1_kfbgg"]
+[ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/tier_0.tscn" id="2_tqd26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yym1a"]
+size = Vector2(256, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nge4r"]
+size = Vector2(256, 256)
+
+[node name="HouseBuilding" type="Node2D" unique_id=2067046555]
+script = ExtResource("1_kfbgg")
+
+[node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_tqd26")]
+
+[node name="BuildingNameLabel" parent="Tier0" index="2" unique_id=1754495792]
+text = "Mine"
+
+[node name="Tier1" type="Area2D" parent="." unique_id=1161219447]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tier1" unique_id=174259710]
+position = Vector2(0, -96)
+shape = SubResource("RectangleShape2D_yym1a")
+
+[node name="Visual" type="ColorRect" parent="Tier1" unique_id=968179401]
+offset_left = -128.0
+offset_top = -192.0
+offset_right = 128.0
+mouse_filter = 1
+color = Color(1, 0.6627451, 1, 1)
+
+[node name="Label" type="Label" parent="Tier1/Visual" unique_id=311950048]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 128.0
+text = "Mine Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Tier2" type="Area2D" parent="." unique_id=1979787528]
+visible = false
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tier2" unique_id=1081792092]
+position = Vector2(0, -120)
+shape = SubResource("RectangleShape2D_nge4r")
+
+[node name="Visual2" type="ColorRect" parent="Tier2" unique_id=1888564750]
+offset_left = -128.0
+offset_top = -248.0
+offset_right = 128.0
+offset_bottom = 8.0
+mouse_filter = 1
+color = Color(1, 0.6627451, 1, 1)
+
+[node name="Label" type="Label" parent="Tier2/Visual2" unique_id=1273391132]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 128.0
+text = "Mine Level 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UpgradeLabel" type="Button" parent="." unique_id=806075429]
+offset_left = -35.0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 38.0
+text = "Upgrade"
+
+[connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
+[connection signal="input_event" from="Tier1" to="." method="_on_input_event"]
+[connection signal="input_event" from="Tier2" to="." method="_on_input_event"]
+[connection signal="pressed" from="UpgradeLabel" to="." method="_on_upgrade_label_pressed"]
+
+[editable path="Tier0"]

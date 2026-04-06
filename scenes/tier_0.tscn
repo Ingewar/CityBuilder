@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d2kf7fcqwsd6k"]
+
+[ext_resource type="Texture2D" uid="uid://cs6q334hfpbys" path="res://sprites/kenney_platformer-art-buildings/Tiles/signCoin.png" id="1_y6ip2"]
+[ext_resource type="Texture2D" uid="uid://bajvvrwfstx4h" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofRedLeft.png" id="2_i72h2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvy8r"]
+size = Vector2(80, 128)
+
+[node name="Tier0" type="Area2D" unique_id=1081040857]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947773750]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_uvy8r")
+
+[node name="Visual" type="Node2D" parent="." unique_id=531025585]
+position = Vector2(0, -96)
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=268472750]
+position = Vector2(0, -0.08679199)
+texture = ExtResource("1_y6ip2")
+
+[node name="RoofRedLeft" type="Sprite2D" parent="Visual" unique_id=536829408]
+position = Vector2(30, 64)
+texture = ExtResource("2_i72h2")
+
+[node name="BuildingNameLabel" type="Label" parent="." unique_id=1754495792]
+offset_left = -32.0
+offset_top = -124.0
+offset_right = 32.0
+offset_bottom = -68.0
+text = "House name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

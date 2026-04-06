@@ -1,0 +1,343 @@
+[gd_scene format=3 uid="uid://duqkcsujxdj2n"]
+
+[ext_resource type="Script" uid="uid://ctxjabj1am3rw" path="res://scripts/building.gd" id="1_bgm4y"]
+[ext_resource type="Texture2D" uid="uid://dj1gpjcc4bsgc" path="res://sprites/kenney_platformer-art-buildings/Tiles/houseDarkBottomMid.png" id="3_7huw0"]
+[ext_resource type="Texture2D" uid="uid://c7g3f6hjn0l7a" path="res://sprites/kenney_platformer-art-buildings/Tiles/houseDarkBottomLeft.png" id="4_blq7k"]
+[ext_resource type="Texture2D" uid="uid://cowjg0rtp5gpb" path="res://sprites/kenney_platformer-art-buildings/Tiles/houseDarkBottomRight.png" id="5_nm462"]
+[ext_resource type="Texture2D" uid="uid://cobi645pykgkc" path="res://sprites/kenney_platformer-art-buildings/Tiles/houseDarkMidLeft.png" id="6_jc16f"]
+[ext_resource type="Texture2D" uid="uid://d010y0c5o5ovj" path="res://sprites/kenney_platformer-art-buildings/Tiles/houseDarkMidRight.png" id="7_g4d30"]
+[ext_resource type="Texture2D" uid="uid://b2an5mxx5vdop" path="res://sprites/kenney_platformer-art-buildings/Tiles/houseDark.png" id="8_jrfpq"]
+[ext_resource type="Texture2D" uid="uid://0pqit3omianp" path="res://sprites/kenney_platformer-art-buildings/Tiles/window.png" id="9_pjx8g"]
+[ext_resource type="Texture2D" uid="uid://dkgypyrar233i" path="res://sprites/kenney_platformer-art-buildings/Tiles/doorLock.png" id="10_nge4r"]
+[ext_resource type="Texture2D" uid="uid://cwfku4gh6r1f8" path="res://sprites/kenney_platformer-art-buildings/Tiles/doorTop.png" id="11_s0gur"]
+[ext_resource type="Texture2D" uid="uid://dg3bos3hxg0ro" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofYellowMid.png" id="12_nge4r"]
+[ext_resource type="Texture2D" uid="uid://o30jeb4tk417" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofYellowRight.png" id="13_s0gur"]
+[ext_resource type="Texture2D" uid="uid://cdhyypartk28q" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofYellowLeft.png" id="14_fl114"]
+[ext_resource type="Texture2D" uid="uid://djh2um38ec54s" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofYellowTopMid.png" id="15_rjisg"]
+[ext_resource type="Texture2D" uid="uid://bbp4f66kjnvb" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofYellowTopLeft.png" id="16_cv530"]
+[ext_resource type="Texture2D" uid="uid://bx21nscy4hui7" path="res://sprites/kenney_platformer-art-buildings/Tiles/roofYellowTopRight.png" id="17_07lgt"]
+[ext_resource type="Texture2D" uid="uid://ctvt1cahwxvme" path="res://sprites/kenney_platformer-art-buildings/Tiles/chimneyThin.png" id="18_bgm4y"]
+[ext_resource type="Texture2D" uid="uid://dow03qcucjvpi" path="res://sprites/kenney_platformer-art-buildings/Tiles/windowHighCheckeredBottom.png" id="19_cv530"]
+[ext_resource type="Texture2D" uid="uid://dmt3ili11son3" path="res://sprites/kenney_platformer-art-buildings/Tiles/windowHighCheckeredTop.png" id="20_07lgt"]
+[ext_resource type="Texture2D" uid="uid://cejn23k2cl63d" path="res://sprites/kenney_platformer-art-buildings/Tiles/windowLowCheckered.png" id="21_bgm4y"]
+[ext_resource type="Texture2D" uid="uid://bvyjb3ko3e07b" path="res://sprites/kenney_platformer-art-buildings/Tiles/fenceLow.png" id="22_07lgt"]
+[ext_resource type="Texture2D" uid="uid://b0g6a5u0gix5a" path="res://sprites/kenney_platformer-art-buildings/Tiles/signHangingCoin.png" id="22_lx6d4"]
+[ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/tier_0.tscn" id="25_lx6d4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07lgt"]
+size = Vector2(344, 264)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nge4r"]
+size = Vector2(400, 344.0868)
+
+[node name="HouseBuilding" type="Node2D" unique_id=2067046555]
+script = ExtResource("1_bgm4y")
+
+[node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("25_lx6d4")]
+
+[node name="BuildingNameLabel" parent="Tier0" index="2" unique_id=1754495792]
+text = "House"
+
+[node name="Tier1" type="Area2D" parent="." unique_id=1161219447]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tier1" unique_id=174259710]
+position = Vector2(4, -132)
+shape = SubResource("RectangleShape2D_07lgt")
+
+[node name="Visual" type="Node2D" parent="Tier1" unique_id=2073611344]
+
+[node name="HouseDarkBottomMid" type="Sprite2D" parent="Tier1/Visual" unique_id=1515261765]
+position = Vector2(1, -32)
+texture = ExtResource("3_7huw0")
+
+[node name="HouseDarkBottomMid3" type="Sprite2D" parent="Tier1/Visual" unique_id=711189880]
+position = Vector2(-64, -32)
+texture = ExtResource("3_7huw0")
+
+[node name="HouseDarkBottomMid2" type="Sprite2D" parent="Tier1/Visual" unique_id=113701098]
+position = Vector2(65, -32)
+texture = ExtResource("3_7huw0")
+
+[node name="HouseDarkBottomLeft" type="Sprite2D" parent="Tier1/Visual" unique_id=1558012946]
+position = Vector2(-128, -32)
+texture = ExtResource("4_blq7k")
+
+[node name="HouseDarkBottomRight" type="Sprite2D" parent="Tier1/Visual" unique_id=681898463]
+position = Vector2(128, -32)
+texture = ExtResource("5_nm462")
+
+[node name="HouseDarkMidLeft" type="Sprite2D" parent="Tier1/Visual" unique_id=1603904359]
+position = Vector2(-128, -100)
+texture = ExtResource("6_jc16f")
+
+[node name="HouseDarkMidRight" type="Sprite2D" parent="Tier1/Visual" unique_id=1150518951]
+position = Vector2(128, -100)
+texture = ExtResource("7_g4d30")
+
+[node name="HouseDark2" type="Sprite2D" parent="Tier1/Visual" unique_id=1286492007]
+position = Vector2(-64, -100)
+texture = ExtResource("8_jrfpq")
+
+[node name="HouseDark3" type="Sprite2D" parent="Tier1/Visual" unique_id=1934565113]
+position = Vector2(1, -100)
+texture = ExtResource("8_jrfpq")
+
+[node name="HouseDark6" type="Sprite2D" parent="Tier1/Visual" unique_id=999065774]
+position = Vector2(64, -100)
+texture = ExtResource("8_jrfpq")
+
+[node name="Window" type="Sprite2D" parent="Tier1/Visual" unique_id=600830223]
+position = Vector2(-56, -88)
+texture = ExtResource("9_pjx8g")
+
+[node name="DoorLock" type="Sprite2D" parent="Tier1/Visual" unique_id=2099930924]
+position = Vector2(88, -32)
+rotation = -0.0009155847
+texture = ExtResource("10_nge4r")
+
+[node name="DoorTop" type="Sprite2D" parent="Tier1/Visual" unique_id=299499313]
+position = Vector2(88, -100)
+texture = ExtResource("11_s0gur")
+
+[node name="RoofYellowMid" type="Sprite2D" parent="Tier1/Visual" unique_id=1717819111]
+position = Vector2(3, -165)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid2" type="Sprite2D" parent="Tier1/Visual" unique_id=563941804]
+position = Vector2(-61, -165)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid5" type="Sprite2D" parent="Tier1/Visual" unique_id=1025250964]
+position = Vector2(-125, -165)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid3" type="Sprite2D" parent="Tier1/Visual" unique_id=2057492993]
+position = Vector2(68, -165)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid4" type="Sprite2D" parent="Tier1/Visual" unique_id=1057805757]
+position = Vector2(131, -165)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowRight" type="Sprite2D" parent="Tier1/Visual" unique_id=1611618400]
+position = Vector2(139, -165)
+texture = ExtResource("13_s0gur")
+
+[node name="RoofYellowLeft" type="Sprite2D" parent="Tier1/Visual" unique_id=4132281]
+position = Vector2(-133, -165)
+texture = ExtResource("14_fl114")
+
+[node name="RoofYellowTopMid" type="Sprite2D" parent="Tier1/Visual" unique_id=300962968]
+position = Vector2(3, -229)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid4" type="Sprite2D" parent="Tier1/Visual" unique_id=1336074]
+position = Vector2(-61, -229)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid5" type="Sprite2D" parent="Tier1/Visual" unique_id=2119865741]
+position = Vector2(-128, -229)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid2" type="Sprite2D" parent="Tier1/Visual" unique_id=1498728532]
+position = Vector2(67, -229)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid3" type="Sprite2D" parent="Tier1/Visual" unique_id=1451376326]
+position = Vector2(131, -229)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopLeft" type="Sprite2D" parent="Tier1/Visual" unique_id=514313582]
+position = Vector2(-133, -229)
+texture = ExtResource("16_cv530")
+
+[node name="RoofYellowTopRight" type="Sprite2D" parent="Tier1/Visual" unique_id=1921415766]
+position = Vector2(139, -229)
+texture = ExtResource("17_07lgt")
+
+[node name="ChimneyThin" type="Sprite2D" parent="Tier1/Visual" unique_id=1445040323]
+position = Vector2(93, -296)
+texture = ExtResource("18_bgm4y")
+
+[node name="Tier2" type="Area2D" parent="." unique_id=1979787528]
+visible = false
+position = Vector2(0, -8)
+
+[node name="Visual" type="Node2D" parent="Tier2" unique_id=1051660757]
+
+[node name="HouseDarkBottomMid" type="Sprite2D" parent="Tier2/Visual" unique_id=1855287154]
+position = Vector2(-3.8739166, -26.873917)
+texture = ExtResource("3_7huw0")
+
+[node name="HouseDarkBottomMid3" type="Sprite2D" parent="Tier2/Visual" unique_id=1652120892]
+position = Vector2(-68.87392, -26.873917)
+texture = ExtResource("3_7huw0")
+
+[node name="HouseDarkBottomMid2" type="Sprite2D" parent="Tier2/Visual" unique_id=1952054467]
+position = Vector2(60.126083, -26.873917)
+texture = ExtResource("3_7huw0")
+
+[node name="HouseDarkBottomLeft" type="Sprite2D" parent="Tier2/Visual" unique_id=1176033529]
+position = Vector2(-132.87392, -26.873917)
+texture = ExtResource("4_blq7k")
+
+[node name="HouseDarkBottomRight" type="Sprite2D" parent="Tier2/Visual" unique_id=704207453]
+position = Vector2(123.12608, -26.873917)
+texture = ExtResource("5_nm462")
+
+[node name="HouseDarkMidLeft" type="Sprite2D" parent="Tier2/Visual" unique_id=1575625441]
+position = Vector2(-132.87392, -94.87392)
+rotation = -0.003609047
+texture = ExtResource("6_jc16f")
+
+[node name="HouseDarkMidRight" type="Sprite2D" parent="Tier2/Visual" unique_id=1584279583]
+position = Vector2(123, -95)
+rotation = -0.0005590326
+texture = ExtResource("7_g4d30")
+
+[node name="HouseDark2" type="Sprite2D" parent="Tier2/Visual" unique_id=1951635493]
+position = Vector2(-69, -95)
+texture = ExtResource("8_jrfpq")
+
+[node name="HouseDark3" type="Sprite2D" parent="Tier2/Visual" unique_id=430438025]
+position = Vector2(-4.0000005, -95)
+rotation = 0.002483093
+texture = ExtResource("8_jrfpq")
+
+[node name="HouseDark6" type="Sprite2D" parent="Tier2/Visual" unique_id=334932822]
+position = Vector2(59, -95)
+texture = ExtResource("8_jrfpq")
+
+[node name="DoorLock" type="Sprite2D" parent="Tier2/Visual" unique_id=559941110]
+position = Vector2(83, -27)
+rotation = -0.0009155847
+texture = ExtResource("10_nge4r")
+
+[node name="DoorTop" type="Sprite2D" parent="Tier2/Visual" unique_id=521024091]
+position = Vector2(83, -95)
+texture = ExtResource("11_s0gur")
+
+[node name="HouseDarkMidLeft2" type="Sprite2D" parent="Tier2/Visual" unique_id=878094641]
+position = Vector2(-132.93295, -164.01974)
+rotation = -0.0019176733
+texture = ExtResource("6_jc16f")
+
+[node name="HouseDarkMidRight2" type="Sprite2D" parent="Tier2/Visual" unique_id=1152551114]
+position = Vector2(123.06705, -164.01974)
+rotation = -0.0019176733
+texture = ExtResource("7_g4d30")
+
+[node name="HouseDark4" type="Sprite2D" parent="Tier2/Visual" unique_id=330344744]
+position = Vector2(-68.93295, -164.01974)
+rotation = -0.0019176733
+texture = ExtResource("8_jrfpq")
+
+[node name="HouseDark5" type="Sprite2D" parent="Tier2/Visual" unique_id=1826920498]
+position = Vector2(-3.932953, -164.01974)
+rotation = -0.0019176733
+texture = ExtResource("8_jrfpq")
+
+[node name="HouseDark7" type="Sprite2D" parent="Tier2/Visual" unique_id=1691276960]
+position = Vector2(59.067047, -164.01974)
+rotation = -0.0019176733
+texture = ExtResource("8_jrfpq")
+
+[node name="RoofYellowMid" type="Sprite2D" parent="Tier2/Visual" unique_id=1578839225]
+position = Vector2(-5, -234.08679)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid2" type="Sprite2D" parent="Tier2/Visual" unique_id=1702804595]
+position = Vector2(-69, -234.08679)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid5" type="Sprite2D" parent="Tier2/Visual" unique_id=1058194881]
+position = Vector2(-133, -234.08679)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid3" type="Sprite2D" parent="Tier2/Visual" unique_id=2131723582]
+position = Vector2(60, -234.08679)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowMid4" type="Sprite2D" parent="Tier2/Visual" unique_id=6884988]
+position = Vector2(123, -234.08679)
+texture = ExtResource("12_nge4r")
+
+[node name="RoofYellowRight" type="Sprite2D" parent="Tier2/Visual" unique_id=534591257]
+position = Vector2(131, -234.08679)
+texture = ExtResource("13_s0gur")
+
+[node name="RoofYellowLeft" type="Sprite2D" parent="Tier2/Visual" unique_id=655257653]
+position = Vector2(-141, -234.08679)
+texture = ExtResource("14_fl114")
+
+[node name="RoofYellowTopMid" type="Sprite2D" parent="Tier2/Visual" unique_id=337921791]
+position = Vector2(-5, -298.0868)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid4" type="Sprite2D" parent="Tier2/Visual" unique_id=2132994264]
+position = Vector2(-69, -298.0868)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid5" type="Sprite2D" parent="Tier2/Visual" unique_id=444895626]
+position = Vector2(-136, -298.0868)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid2" type="Sprite2D" parent="Tier2/Visual" unique_id=980887277]
+position = Vector2(59, -298.0868)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopMid3" type="Sprite2D" parent="Tier2/Visual" unique_id=440194825]
+position = Vector2(123, -298.0868)
+texture = ExtResource("15_rjisg")
+
+[node name="RoofYellowTopLeft" type="Sprite2D" parent="Tier2/Visual" unique_id=1000622030]
+position = Vector2(-141, -298.0868)
+texture = ExtResource("16_cv530")
+
+[node name="RoofYellowTopRight" type="Sprite2D" parent="Tier2/Visual" unique_id=507588672]
+position = Vector2(131, -298.0868)
+texture = ExtResource("17_07lgt")
+
+[node name="ChimneyThin" type="Sprite2D" parent="Tier2/Visual" unique_id=1893224832]
+position = Vector2(85, -365.0868)
+texture = ExtResource("18_bgm4y")
+
+[node name="WindowHighCheckeredBottom" type="Sprite2D" parent="Tier2/Visual" unique_id=1645800120]
+position = Vector2(-96, -88.08679)
+texture = ExtResource("19_cv530")
+
+[node name="WindowHighCheckeredTop" type="Sprite2D" parent="Tier2/Visual" unique_id=1207320590]
+position = Vector2(-96, -152.08679)
+rotation = -0.0019176733
+texture = ExtResource("20_07lgt")
+
+[node name="WindowLowCheckered" type="Sprite2D" parent="Tier2/Visual" unique_id=956595565]
+position = Vector2(0, -280.0868)
+texture = ExtResource("21_bgm4y")
+
+[node name="FenceLow" type="Sprite2D" parent="Tier2/Visual" unique_id=1080028254]
+position = Vector2(160, -24.086792)
+texture = ExtResource("22_07lgt")
+
+[node name="SignHangingCoin" type="Sprite2D" parent="Tier2/Visual" unique_id=1802558466]
+position = Vector2(192, -120.08679)
+texture = ExtResource("22_lx6d4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tier2" unique_id=1081792092]
+position = Vector2(25, -160.08679)
+shape = SubResource("RectangleShape2D_nge4r")
+
+[node name="UpgradeLabel" type="Button" parent="." unique_id=806075429]
+offset_left = -35.0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 38.0
+text = "Upgrade"
+
+[connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
+[connection signal="input_event" from="Tier1" to="." method="_on_input_event"]
+[connection signal="input_event" from="Tier2" to="." method="_on_input_event"]
+[connection signal="pressed" from="UpgradeLabel" to="." method="_on_upgrade_label_pressed"]
+
+[editable path="Tier0"]

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://155xx7s6y6ta"]
+
+[ext_resource type="PackedScene" uid="uid://duqkcsujxdj2n" path="res://scenes/building.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://b3334tn0ng571" path="res://sprites/Tiles/grass.png" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://bvd0e8kd1swfp" path="res://scripts/game_manager.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dpbu7okvqxxnr" path="res://scenes/mine.tscn" id="4_jyhfs"]
+
+[node name="Main" type="Node2D" unique_id=1670869968]
+
+[node name="Building" parent="." unique_id=2067046555 instance=ExtResource("1_o5qli")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=589652112]
+position = Vector2(0, -176)
+
+[node name="Environment" type="Node2D" parent="." unique_id=648066190]
+z_index = -1
+
+[node name="Grass" type="Sprite2D" parent="Environment" unique_id=2076061765]
+position = Vector2(0, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass2" type="Sprite2D" parent="Environment" unique_id=830859285]
+position = Vector2(64, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass3" type="Sprite2D" parent="Environment" unique_id=1661178580]
+position = Vector2(128, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass4" type="Sprite2D" parent="Environment" unique_id=299609103]
+position = Vector2(-64, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass5" type="Sprite2D" parent="Environment" unique_id=1815708929]
+position = Vector2(-128, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass6" type="Sprite2D" parent="Environment" unique_id=2001780706]
+position = Vector2(323, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass7" type="Sprite2D" parent="Environment" unique_id=693970421]
+position = Vector2(387, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass8" type="Sprite2D" parent="Environment" unique_id=18084864]
+position = Vector2(451, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass9" type="Sprite2D" parent="Environment" unique_id=1450576782]
+position = Vector2(259, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass10" type="Sprite2D" parent="Environment" unique_id=767170036]
+position = Vector2(195, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass11" type="Sprite2D" parent="Environment" unique_id=1388356811]
+position = Vector2(-325, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass12" type="Sprite2D" parent="Environment" unique_id=666247878]
+position = Vector2(-261, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass13" type="Sprite2D" parent="Environment" unique_id=522871409]
+position = Vector2(-197, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass14" type="Sprite2D" parent="Environment" unique_id=1447329243]
+position = Vector2(-389, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="Grass15" type="Sprite2D" parent="Environment" unique_id=1026757106]
+position = Vector2(-453, 32)
+texture = ExtResource("2_0wfyh")
+
+[node name="GameManager" type="Node2D" parent="." unique_id=756368257]
+script = ExtResource("3_sugp2")
+
+[node name="HouseBuilding" parent="." unique_id=610116192 instance=ExtResource("4_jyhfs")]
+position = Vector2(288, 0)
