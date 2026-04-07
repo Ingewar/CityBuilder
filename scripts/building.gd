@@ -1,6 +1,8 @@
 extends Node2D
 class_name Building
 
+@export_enum("CLICKER", "PASSIVE", "MULTIPLIER") var building_type : String
+
 @onready var tiers: Array[Area2D] = [$Tier0, $Tier1, $Tier2]
 @onready var upgrade_label: Button = $UpgradeLabel
 
@@ -23,6 +25,15 @@ func upgrade():
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		print("Building clicked")
+		match building_type:
+			"CLICKER":
+				GameManager.add_gold(GameManager.click_value * current_tier_index)
+			"PASSIVE":
+				# Implement passive gold generation logic here
+				pass
+			"MULTIPLIER":
+				# Implement multiplier effect logic here
+				pass
 
 
 func _on_upgrade_label_pressed() -> void:
