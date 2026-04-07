@@ -9,7 +9,7 @@
 
 [node name="House" parent="." unique_id=2067046555 instance=ExtResource("1_o5qli")]
 position = Vector2(832, 944)
-building_type = "MULTIPLIER"
+building_type = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=589652112]
 position = Vector2(960, 536)
@@ -80,6 +80,5 @@ texture = ExtResource("2_0wfyh")
 
 [node name="Mine" parent="." unique_id=610116192 instance=ExtResource("4_jyhfs")]
 position = Vector2(1152, 944)
-building_type = "CLICKER"
 
 [node name="HUD" parent="." unique_id=1886338410 instance=ExtResource("4_tbgi4")]
