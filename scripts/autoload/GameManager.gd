@@ -2,8 +2,8 @@ extends Node
 
 signal gold_changed(new_gold: int)
 
-var gold: int = 50
-var click_value: int = 1
+@export var gold: int = 50
+@export var click_value: int = 1
 
 func _ready() -> void:
     print("GameManager ready. Initial gold: ", gold)

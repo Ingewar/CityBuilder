@@ -9,8 +9,10 @@ size = Vector2(256, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nge4r"]
 size = Vector2(256, 256)
 
-[node name="HouseBuilding" type="Node2D" unique_id=2067046555]
+[node name="HouseBuilding" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button")]
 script = ExtResource("1_kfbgg")
+upgrade_costs = Array[int]([25, 100])
+upgrade_button = NodePath("UpgradeButton")
 
 [node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_tqd26")]
 
@@ -69,7 +71,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="UpgradeLabel" type="Button" parent="." unique_id=806075429]
+[node name="UpgradeButton" type="Button" parent="." unique_id=806075429]
 offset_left = -35.0
 offset_top = 7.0
 offset_right = 40.0
@@ -79,6 +81,5 @@ text = "Upgrade"
 [connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
 [connection signal="input_event" from="Tier1" to="." method="_on_input_event"]
 [connection signal="input_event" from="Tier2" to="." method="_on_input_event"]
-[connection signal="pressed" from="UpgradeLabel" to="." method="_on_upgrade_label_pressed"]
 
 [editable path="Tier0"]

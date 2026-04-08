@@ -30,13 +30,15 @@ size = Vector2(344, 264)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nge4r"]
 size = Vector2(400, 344.0868)
 
-[node name="HouseBuilding" type="Node2D" unique_id=2067046555]
+[node name="FarmBuilding" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button")]
 script = ExtResource("1_bgm4y")
+upgrade_costs = Array[int]([50, 200])
+upgrade_button = NodePath("UpgradeLabel")
 
 [node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("25_lx6d4")]
 
 [node name="BuildingNameLabel" parent="Tier0" index="2" unique_id=1754495792]
-text = "House"
+text = "Farm"
 
 [node name="Tier1" type="Area2D" parent="." unique_id=1161219447]
 visible = false
@@ -338,6 +340,5 @@ text = "Upgrade"
 [connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
 [connection signal="input_event" from="Tier1" to="." method="_on_input_event"]
 [connection signal="input_event" from="Tier2" to="." method="_on_input_event"]
-[connection signal="pressed" from="UpgradeLabel" to="." method="_on_upgrade_label_pressed"]
 
 [editable path="Tier0"]

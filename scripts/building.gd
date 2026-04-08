@@ -7,15 +7,19 @@ enum BuildingType {
 	MULTIPLIER
 }
 @export var building_type : BuildingType
+@export var upgrade_costs: Array[int]
+@export var upgrade_button: Button
 
 @onready var tiers: Array[Area2D] = [$Tier0, $Tier1, $Tier2]
-@onready var upgrade_label: Button = $UpgradeLabel
 
 var current_tier_index: int = 0
 var current_tier: Area2D
 
 func _ready() -> void:
 	current_tier = tiers[current_tier_index]
+	upgrade_button.pressed.connect(_on_upgrade_label_pressed)
+	GameManager.gold_changed.connect(_on_gold_changed)
+	_on_gold_changed(GameManager.gold)  # Initialize the upgrade button state
 
 func upgrade():
 	if current_tier_index < tiers.size() - 1:
@@ -25,6 +29,9 @@ func upgrade():
 		current_tier = tiers[current_tier_index]
 		current_tier.visible = true
 		current_tier.process_mode = Node2D.PROCESS_MODE_INHERIT
+	elif current_tier_index == tiers.size() - 1:
+		print("Max tier reached")
+		upgrade_button.visible = false
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -43,4 +50,11 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 func _on_upgrade_label_pressed() -> void:
 	print("Upgrade button pressed")
-	upgrade()
+	if GameManager.spend_gold(upgrade_costs[current_tier_index]):
+		upgrade()
+
+func _on_gold_changed(new_gold: int) -> void:
+	if current_tier_index < upgrade_costs.size() and new_gold >= upgrade_costs[current_tier_index]:
+		upgrade_button.disabled = false
+	else:
+		upgrade_button.disabled = true

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://155xx7s6y6ta"]
 
-[ext_resource type="PackedScene" uid="uid://duqkcsujxdj2n" path="res://scenes/buildings/house.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://duqkcsujxdj2n" path="res://scenes/buildings/farm.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://b3334tn0ng571" path="res://sprites/Tiles/grass.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dpbu7okvqxxnr" path="res://scenes/buildings/mine.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://i77canfdckx3" path="res://scenes/HUD/hud.tscn" id="4_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1670869968]
 
-[node name="House" parent="." unique_id=2067046555 instance=ExtResource("1_o5qli")]
+[node name="Farm" parent="." unique_id=2067046555 instance=ExtResource("1_o5qli")]
 position = Vector2(832, 944)
 building_type = 2
 
