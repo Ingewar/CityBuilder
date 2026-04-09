@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cejn23k2cl63d" path="res://sprites/kenney_platformer-art-buildings/Tiles/windowLowCheckered.png" id="21_bgm4y"]
 [ext_resource type="Texture2D" uid="uid://bvyjb3ko3e07b" path="res://sprites/kenney_platformer-art-buildings/Tiles/fenceLow.png" id="22_07lgt"]
 [ext_resource type="Texture2D" uid="uid://b0g6a5u0gix5a" path="res://sprites/kenney_platformer-art-buildings/Tiles/signHangingCoin.png" id="22_lx6d4"]
-[ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/buildings/tier_0.tscn" id="25_lx6d4"]
+[ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/buildings/components/tier_0.tscn" id="25_lx6d4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07lgt"]
 size = Vector2(344, 264)
@@ -32,6 +32,7 @@ size = Vector2(400, 344.0868)
 
 [node name="FarmBuilding" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button")]
 script = ExtResource("1_bgm4y")
+building_type = 1
 upgrade_costs = Array[int]([50, 200])
 upgrade_button = NodePath("UpgradeLabel")
 

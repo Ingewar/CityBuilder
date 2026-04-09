@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dpbu7okvqxxnr"]
+[gd_scene format=3 uid="uid://dybjsa38ibflj"]
 
-[ext_resource type="Script" uid="uid://ctxjabj1am3rw" path="res://scripts/building.gd" id="1_kfbgg"]
-[ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/buildings/components/tier_0.tscn" id="2_tqd26"]
+[ext_resource type="Script" uid="uid://ctxjabj1am3rw" path="res://scripts/building.gd" id="1_asg32"]
+[ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/buildings/components/tier_0.tscn" id="2_dpdl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yym1a"]
 size = Vector2(256, 192)
@@ -9,15 +9,16 @@ size = Vector2(256, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nge4r"]
 size = Vector2(256, 256)
 
-[node name="Mine" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button")]
-script = ExtResource("1_kfbgg")
-upgrade_costs = Array[int]([25, 100])
+[node name="Guild" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button")]
+script = ExtResource("1_asg32")
+building_type = 2
+upgrade_costs = Array[int]([150, 500])
 upgrade_button = NodePath("UpgradeButton")
 
-[node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_tqd26")]
+[node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_dpdl8")]
 
 [node name="BuildingNameLabel" parent="Tier0" index="2" unique_id=1754495792]
-text = "Mine"
+text = "Guild"
 
 [node name="Tier1" type="Area2D" parent="." unique_id=1161219447]
 visible = false
@@ -39,7 +40,7 @@ offset_left = 96.0
 offset_top = 64.0
 offset_right = 160.0
 offset_bottom = 128.0
-text = "Mine Level 1"
+text = "Guild Level 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -66,7 +67,7 @@ offset_left = 96.0
 offset_top = 64.0
 offset_right = 160.0
 offset_bottom = 128.0
-text = "Mine Level 2"
+text = "~Guild Level 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
