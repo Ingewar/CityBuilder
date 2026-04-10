@@ -9,6 +9,13 @@ enum BuildingType {
 @export var building_type : BuildingType
 @export var upgrade_costs: Array[int]
 @export var upgrade_button: Button
+@export_group("Passive Generation")
+@export var passive_rate: int = 0
+@export var passive_increment: int = 1
+@export var timer: Timer
+@export_group("Multiplier Effect")
+@export var multiplier_value: int = 0
+@export var multiplier_increment: int = 1
 
 @onready var tiers: Array[Area2D] = [$Tier0, $Tier1, $Tier2]
 
@@ -20,6 +27,8 @@ func _ready() -> void:
 	upgrade_button.pressed.connect(_on_upgrade_label_pressed)
 	GameManager.gold_changed.connect(_on_gold_changed)
 	_on_gold_changed(GameManager.gold)  # Initialize the upgrade button state
+	if building_type == BuildingType.PASSIVE:
+		timer.timeout.connect(_on_timer_timeout)
 
 func upgrade():
 	if current_tier_index < tiers.size() - 1:
@@ -29,6 +38,10 @@ func upgrade():
 		current_tier = tiers[current_tier_index]
 		current_tier.visible = true
 		current_tier.process_mode = Node2D.PROCESS_MODE_INHERIT
+		if building_type == BuildingType.PASSIVE:
+			passive_rate += passive_increment  # Increase passive generation rate
+		elif building_type == BuildingType.MULTIPLIER:
+			GameManager.click_value += multiplier_increment  # Increase click value
 	elif current_tier_index == tiers.size() - 1:
 		print("Max tier reached")
 		upgrade_button.visible = false
@@ -58,3 +71,7 @@ func _on_gold_changed(new_gold: int) -> void:
 		upgrade_button.disabled = false
 	else:
 		upgrade_button.disabled = true
+
+func _on_timer_timeout() -> void:
+	if building_type == BuildingType.PASSIVE:
+		GameManager.add_gold(passive_rate)
