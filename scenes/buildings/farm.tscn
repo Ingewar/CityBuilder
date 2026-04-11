@@ -342,7 +342,6 @@ text = "Upgrade"
 
 [node name="Timer" type="Timer" parent="." unique_id=1500324905]
 wait_time = 5.0
-autostart = true
 
 [node name="GoldSpawnMarker" type="Marker2D" parent="." unique_id=518691916]
 unique_name_in_owner = true

@@ -83,7 +83,6 @@ text = "Upgrade"
 
 [node name="PassiveIncomeRate" type="Timer" parent="." unique_id=977428035]
 wait_time = 5.0
-autostart = true
 
 [node name="GoldSpawnMarker" type="Marker2D" parent="." unique_id=38417843]
 unique_name_in_owner = true

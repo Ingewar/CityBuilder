@@ -46,6 +46,7 @@ func upgrade():
 		tween.tween_property(current_tier, "scale", Vector2(1, 1), 0.1).set_ease(Tween.EASE_IN)
 		if building_type == BuildingType.PASSIVE:
 			passive_rate += passive_increment  # Increase passive generation rate
+			timer.start()  # Restart timer to apply new rate immediately
 		elif building_type == BuildingType.MULTIPLIER:
 			GameManager.click_value += multiplier_increment  # Increase click value
 	elif current_tier_index == tiers.size() - 1:
