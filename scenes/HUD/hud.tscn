@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i77canfdckx3"]
 
 [ext_resource type="Script" uid="uid://cum0yfanim8g5" path="res://scripts/UI/hud.gd" id="1_c0cnr"]
+[ext_resource type="Texture2D" uid="uid://tvfvqhubu20f" path="res://coin_gold.png" id="2_glunx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0cnr"]
 bg_color = Color(0.46666667, 0.46666667, 0.46666667, 0.64705884)
@@ -25,17 +26,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_c0cnr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopBar" unique_id=1939280650]
 layout_mode = 2
-alignment = 1
 
 [node name="GoldContainer" type="BoxContainer" parent="TopBar/HBoxContainer" unique_id=577744817]
 layout_mode = 2
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="GoldTextLabel" type="Label" parent="TopBar/HBoxContainer/GoldContainer" unique_id=484573316]
+[node name="TextureRect" type="TextureRect" parent="TopBar/HBoxContainer/GoldContainer" unique_id=609633347]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Gold:"
+texture = ExtResource("2_glunx")
 
 [node name="GoldValueLabel" type="Label" parent="TopBar/HBoxContainer/GoldContainer" unique_id=1211079170]
 unique_name_in_owner = true
