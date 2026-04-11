@@ -14,6 +14,7 @@ enum BuildingType {
 @export var passive_rate: int = 0
 @export var passive_increment: int = 5
 @export var timer: Timer
+@export var gold_spawn_marker: Marker2D
 @export_group("Multiplier Effect")
 @export var multiplier_value: int = 0
 @export var multiplier_increment: int = 1
@@ -87,7 +88,4 @@ func _on_timer_timeout() -> void:
 	if building_type == BuildingType.PASSIVE:
 		if passive_rate > 0:
 			GameManager.add_gold(passive_rate)
-			var shape_node = current_tier.get_node("CollisionShape2D")
-			var center = current_tier.global_position + shape_node.position        # node position ✓
-			var half_height = (shape_node.shape as RectangleShape2D).size.y / 2   # shape size ✓
-			spawn_floating_label("+" + str(passive_rate), center - Vector2(0, half_height + 20))  # spawn above the building
+			spawn_floating_label("+" + str(passive_rate), gold_spawn_marker.global_position)

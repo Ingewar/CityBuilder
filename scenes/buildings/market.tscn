@@ -9,12 +9,13 @@ size = Vector2(256, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nge4r"]
 size = Vector2(256, 256)
 
-[node name="Market" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button", "timer")]
+[node name="Market" type="Node2D" unique_id=2067046555 node_paths=PackedStringArray("upgrade_button", "timer", "gold_spawn_marker")]
 script = ExtResource("1_uw0k4")
 building_type = 1
 upgrade_costs = Array[int]([75, 300])
 upgrade_button = NodePath("UpgradeButton")
 timer = NodePath("PassiveIncomeRate")
+gold_spawn_marker = NodePath("GoldSpawnMarker")
 
 [node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_nri0j")]
 
@@ -83,6 +84,10 @@ text = "Upgrade"
 [node name="PassiveIncomeRate" type="Timer" parent="." unique_id=977428035]
 wait_time = 5.0
 autostart = true
+
+[node name="GoldSpawnMarker" type="Marker2D" parent="." unique_id=38417843]
+unique_name_in_owner = true
+position = Vector2(0, -216)
 
 [connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
 [connection signal="input_event" from="Tier1" to="." method="_on_input_event"]
