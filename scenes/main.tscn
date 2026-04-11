@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://duqkcsujxdj2n" path="res://scenes/buildings/farm.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dpbu7okvqxxnr" path="res://scenes/buildings/mine.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://i77canfdckx3" path="res://scenes/HUD/hud.tscn" id="4_tbgi4"]
-[ext_resource type="Texture2D" path="res://sprites/Tiles/tiles_spritesheet.png" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://bdq7hmfkayk1e" path="res://sprites/Tiles/tiles_spritesheet.png" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cu1rl34ldois" path="res://scenes/buildings/market.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dybjsa38ibflj" path="res://scenes/buildings/guild.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://do6qro0gbrtgt" path="res://scenes/buildings/castle.tscn" id="7_tipki"]

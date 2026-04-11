@@ -39,6 +39,10 @@ func upgrade():
 		current_tier = tiers[current_tier_index]
 		current_tier.visible = true
 		current_tier.process_mode = Node2D.PROCESS_MODE_INHERIT
+		# Apply building-specific effects on upgrade
+		var tween := create_tween()
+		tween.tween_property(current_tier, "scale", Vector2(1.1, 1.1), 0.1).set_ease(Tween.EASE_OUT)
+		tween.tween_property(current_tier, "scale", Vector2(1, 1), 0.1).set_ease(Tween.EASE_IN)
 		if building_type == BuildingType.PASSIVE:
 			passive_rate += passive_increment  # Increase passive generation rate
 		elif building_type == BuildingType.MULTIPLIER:
