@@ -9,9 +9,10 @@ enum BuildingType {
 @export var building_type : BuildingType
 @export var upgrade_costs: Array[int]
 @export var upgrade_button: Button
+@export var floating_label_scene: PackedScene = preload("res://scenes/floating_label.tscn")
 @export_group("Passive Generation")
 @export var passive_rate: int = 0
-@export var passive_increment: int = 1
+@export var passive_increment: int = 5
 @export var timer: Timer
 @export_group("Multiplier Effect")
 @export var multiplier_value: int = 0
@@ -49,10 +50,11 @@ func upgrade():
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Building clicked")
 		match building_type:
 			BuildingType.CLICKER:
-				GameManager.add_gold(GameManager.click_value * current_tier_index)
+				if current_tier_index > 0:
+					GameManager.add_gold(GameManager.click_value * current_tier_index)
+					spawn_floating_label("+" + str(GameManager.click_value * current_tier_index), event.position + Vector2(0, -20))
 			BuildingType.PASSIVE:
 				# Implement passive gold generation logic here
 				pass
@@ -60,9 +62,14 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 				# Implement multiplier effect logic here
 				pass
 
+func spawn_floating_label(value: String, spawn_position: Vector2) -> void:
+	var floating_label = floating_label_scene.instantiate()
+	floating_label.setup(value)
+	floating_label.global_position = spawn_position
+	get_tree().current_scene.add_child(floating_label)
+
 
 func _on_upgrade_label_pressed() -> void:
-	print("Upgrade button pressed")
 	if GameManager.spend_gold(upgrade_costs[current_tier_index]):
 		upgrade()
 
@@ -74,4 +81,9 @@ func _on_gold_changed(new_gold: int) -> void:
 
 func _on_timer_timeout() -> void:
 	if building_type == BuildingType.PASSIVE:
-		GameManager.add_gold(passive_rate)
+		if passive_rate > 0:
+			GameManager.add_gold(passive_rate)
+			var shape_node = current_tier.get_node("CollisionShape2D")
+			var center = current_tier.global_position + shape_node.position        # node position ✓
+			var half_height = (shape_node.shape as RectangleShape2D).size.y / 2   # shape size ✓
+			spawn_floating_label("+" + str(passive_rate), center - Vector2(0, half_height + 20))  # spawn above the building

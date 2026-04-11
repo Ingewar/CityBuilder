@@ -36,7 +36,6 @@ building_type = 1
 upgrade_costs = Array[int]([50, 200])
 upgrade_button = NodePath("UpgradeLabel")
 timer = NodePath("Timer")
-multiplier_value = 0
 
 [node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("25_lx6d4")]
 
@@ -341,6 +340,7 @@ offset_bottom = 38.0
 text = "Upgrade"
 
 [node name="Timer" type="Timer" parent="." unique_id=1500324905]
+wait_time = 5.0
 autostart = true
 
 [connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
