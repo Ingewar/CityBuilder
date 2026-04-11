@@ -14,7 +14,7 @@ config/name="City Builder"
 config/tags=PackedStringArray("tutorial")
 run/main_scene="uid://155xx7s6y6ta"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bsmldutlk4p37"
 
 [autoload]
 
