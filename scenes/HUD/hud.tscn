@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i77canfdckx3"]
 
 [ext_resource type="Script" uid="uid://cum0yfanim8g5" path="res://scripts/UI/hud.gd" id="1_c0cnr"]
-[ext_resource type="Texture2D" uid="uid://tvfvqhubu20f" path="res://coin_gold.png" id="2_glunx"]
+[ext_resource type="Texture2D" uid="uid://tvfvqhubu20f" path="res://sprites/coin_gold.png" id="2_glunx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0cnr"]
 bg_color = Color(0.46666667, 0.46666667, 0.46666667, 0.64705884)
