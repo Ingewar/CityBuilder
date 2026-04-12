@@ -1,6 +1,7 @@
 extends Node
 
 signal gold_changed(new_gold: int)
+signal game_over()
 
 @export var gold: int = 50
 @export var click_value: int = 1
@@ -43,4 +44,4 @@ func notify_max_tier_reached() -> void:
     _building_reached_max_tier_count += 1
     if _building_reached_max_tier_count >= BUILDING_AMOUNT:
         play_time = _get_play_time()
-        SceneManager.change_scene(SceneManager.Scene.GAME_OVER)
+        game_over.emit()
