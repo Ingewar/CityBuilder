@@ -1,10 +1,19 @@
 extends Node
 
-const GAME_OVER = "res://scenes/UI/game_over.tscn"
-const GAME = "res://main.tscn"
+var game_over_scene: PackedScene = preload("res://scenes/HUD/game_over_menu.tscn")
+var main_menu_scene: PackedScene = preload("res://scenes/HUD/main_menu.tscn")
+var main_scene: PackedScene = preload("res://scenes/main.tscn")
 
-func change_scene(scene_path: String):
-    call_deferred("_do_change_scene", scene_path)
+enum Scene { MAIN_MENU, GAME, GAME_OVER }
 
-func _do_change_scene(scene_path: String):
-    get_tree().change_scene_to_file(scene_path)
+func load_scene(scene: PackedScene) -> void:
+	get_tree().change_scene_to_packed(scene)
+
+func change_scene(scene: Scene) -> void:
+	match scene:
+		Scene.MAIN_MENU:
+			load_scene(main_menu_scene)
+		Scene.GAME:
+			load_scene(main_scene)
+		Scene.GAME_OVER:
+			load_scene(game_over_scene)

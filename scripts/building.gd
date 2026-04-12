@@ -49,9 +49,11 @@ func upgrade():
 			timer.start()  # Restart timer to apply new rate immediately
 		elif building_type == BuildingType.MULTIPLIER:
 			GameManager.click_value += multiplier_increment  # Increase click value
-	elif current_tier_index == tiers.size() - 1:
-		print("Max tier reached")
-		upgrade_button.visible = false
+		# Check if we just reached max tier
+		if current_tier_index == tiers.size() - 1:
+			print("Max tier reached")
+			GameManager.notify_max_tier_reached()
+			upgrade_button.visible = false
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

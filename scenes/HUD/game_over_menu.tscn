@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c41qcdmdj0l32"]
+
+[ext_resource type="Script" uid="uid://bpu5eucpy4uoy" path="res://scripts/UI/game_over_menu.gd" id="1_hp2sl"]
+
+[node name="GameOverMenu" type="Control" unique_id=1016189316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hp2sl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1881722160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=20499779]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="WonLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=774428006]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "You Won!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1744625176]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayTimeLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=987818448]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Your play time:"
+
+[node name="PlayTimeValue" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1326261531]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
+
+[node name="ReplayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1300316920]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Start new game"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1699605179]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Exit"

@@ -12,13 +12,14 @@ config_version=5
 
 config/name="City Builder"
 config/tags=PackedStringArray("tutorial")
-run/main_scene="uid://155xx7s6y6ta"
+run/main_scene="uid://blhep6loo4kp1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://bsmldutlk4p37"
 
 [autoload]
 
 GameManager="*uid://cttchbox5c8v3"
+SceneManager="*uid://bpocsnsb4kfr8"
 
 [display]
 

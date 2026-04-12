@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://155xx7s6y6ta"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://duqkcsujxdj2n" path="res://scenes/buildings/farm.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dpbu7okvqxxnr" path="res://scenes/buildings/mine.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://i77canfdckx3" path="res://scenes/HUD/hud.tscn" id="4_tbgi4"]
@@ -171,6 +172,7 @@ tile_size = Vector2i(70, 70)
 sources/0 = SubResource("TileSetAtlasSource_tefeu")
 
 [node name="Main" type="Node2D" unique_id=1670869968]
+script = ExtResource("1_main")
 
 [node name="HUD" parent="." unique_id=1886338410 instance=ExtResource("4_tbgi4")]
 
