@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctxjabj1am3rw" path="res://scripts/building.gd" id="1_uw0k4"]
 [ext_resource type="PackedScene" uid="uid://d2kf7fcqwsd6k" path="res://scenes/buildings/components/tier_0.tscn" id="2_nri0j"]
+[ext_resource type="PackedScene" uid="uid://b3cfwud8jvbmb" path="res://scenes/HUD/upgrade_button.tscn" id="3_nri0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yym1a"]
 size = Vector2(256, 192)
@@ -74,19 +75,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="UpgradeButton" type="Button" parent="." unique_id=806075429]
-offset_left = -35.0
-offset_top = 7.0
-offset_right = 40.0
-offset_bottom = 38.0
-text = "Upgrade"
-
 [node name="PassiveIncomeRate" type="Timer" parent="." unique_id=977428035]
 wait_time = 5.0
 
 [node name="GoldSpawnMarker" type="Marker2D" parent="." unique_id=38417843]
 unique_name_in_owner = true
 position = Vector2(0, -216)
+
+[node name="UpgradeButton" parent="." unique_id=1406397643 instance=ExtResource("3_nri0j")]
 
 [connection signal="input_event" from="Tier0" to="." method="_on_input_event"]
 [connection signal="input_event" from="Tier1" to="." method="_on_input_event"]

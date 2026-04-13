@@ -6,9 +6,9 @@ enum BuildingType {
 	PASSIVE,
 	MULTIPLIER
 }
-@export var building_type : BuildingType
+@export var building_type: BuildingType
 @export var upgrade_costs: Array[int]
-@export var upgrade_button: Button
+@export var upgrade_button: UpgradeButton
 @export var floating_label_scene: PackedScene = preload("res://scenes/floating_label.tscn")
 @export_group("Passive Generation")
 @export var passive_rate: int = 0
@@ -27,8 +27,9 @@ var current_tier: Area2D
 func _ready() -> void:
 	current_tier = tiers[current_tier_index]
 	upgrade_button.pressed.connect(_on_upgrade_label_pressed)
+	upgrade_button.set_cost(upgrade_costs[current_tier_index])
 	GameManager.gold_changed.connect(_on_gold_changed)
-	_on_gold_changed(GameManager.gold)  # Initialize the upgrade button state
+	_on_gold_changed(GameManager.gold) # Initialize the upgrade button state
 	if building_type == BuildingType.PASSIVE:
 		timer.timeout.connect(_on_timer_timeout)
 
@@ -40,15 +41,16 @@ func upgrade():
 		current_tier = tiers[current_tier_index]
 		current_tier.visible = true
 		current_tier.process_mode = Node2D.PROCESS_MODE_INHERIT
+		upgrade_button.set_cost(upgrade_costs[current_tier_index])
 		# Apply building-specific effects on upgrade
 		var tween := create_tween()
 		tween.tween_property(current_tier, "scale", Vector2(1.1, 1.1), 0.1).set_ease(Tween.EASE_OUT)
 		tween.tween_property(current_tier, "scale", Vector2(1, 1), 0.1).set_ease(Tween.EASE_IN)
 		if building_type == BuildingType.PASSIVE:
-			passive_rate += passive_increment  # Increase passive generation rate
-			timer.start()  # Restart timer to apply new rate immediately
+			passive_rate += passive_increment # Increase passive generation rate
+			timer.start() # Restart timer to apply new rate immediately
 		elif building_type == BuildingType.MULTIPLIER:
-			GameManager.click_value += multiplier_increment  # Increase click value
+			GameManager.click_value += multiplier_increment # Increase click value
 		# Check if we just reached max tier
 		if current_tier_index == tiers.size() - 1:
 			print("Max tier reached")
@@ -75,7 +77,6 @@ func spawn_floating_label(value: String, spawn_position: Vector2) -> void:
 	floating_label.setup(value)
 	floating_label.global_position = spawn_position
 	get_tree().current_scene.add_child(floating_label)
-
 
 func _on_upgrade_label_pressed() -> void:
 	if GameManager.spend_gold(upgrade_costs[current_tier_index]):
