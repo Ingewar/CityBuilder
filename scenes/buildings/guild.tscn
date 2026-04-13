@@ -15,6 +15,9 @@ script = ExtResource("1_asg32")
 building_type = 2
 upgrade_costs = Array[int]([150, 500])
 upgrade_button = NodePath("UpgradeButton")
+tooltip_text = "Multiply the amount of gold you get from the mine.
+Tier 1: x1
+Tier 2: x2"
 
 [node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_dpdl8")]
 

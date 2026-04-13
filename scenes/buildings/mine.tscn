@@ -14,6 +14,9 @@ size = Vector2(256, 256)
 script = ExtResource("1_kfbgg")
 upgrade_costs = Array[int]([25, 100])
 upgrade_button = NodePath("UpgradeButton")
+tooltip_text = "Main source of gold. Click to earn gold.
+Tier 1: 1 gold per click
+Tier 2: 2 gold  per click"
 
 [node name="Tier0" parent="." unique_id=1081040857 instance=ExtResource("2_tqd26")]
 

@@ -10,6 +10,9 @@ enum BuildingType {
 @export var upgrade_costs: Array[int]
 @export var upgrade_button: UpgradeButton
 @export var floating_label_scene: PackedScene = preload("res://scenes/floating_label.tscn")
+@export_group("Tooltip")
+@export_multiline var tooltip_text: String = ""
+@export var tooltip_delay: float = 0.3
 @export_group("Passive Generation")
 @export var passive_rate: int = 0
 @export var passive_increment: int = 5
@@ -23,8 +26,20 @@ enum BuildingType {
 
 var current_tier_index: int = 0
 var current_tier: Area2D
+var tooltip_timer: Timer
 
 func _ready() -> void:
+	#region Tooltip setup
+	tooltip_timer = Timer.new()
+	tooltip_timer.one_shot = true
+	tooltip_timer.wait_time = tooltip_delay
+	add_child(tooltip_timer)
+	tooltip_timer.timeout.connect(_show_tooltip)
+	for tier in tiers:
+		tier.mouse_entered.connect(tooltip_timer.start)
+		tier.mouse_exited.connect(_on_tier_mouse_exited)
+	#endregion
+
 	current_tier = tiers[current_tier_index]
 	upgrade_button.pressed.connect(_on_upgrade_label_pressed)
 	upgrade_button.set_cost(upgrade_costs[current_tier_index])
@@ -93,3 +108,10 @@ func _on_timer_timeout() -> void:
 		if passive_rate > 0:
 			GameManager.add_gold(passive_rate)
 			spawn_floating_label("+" + str(passive_rate), gold_spawn_marker.global_position)
+
+func _on_tier_mouse_exited() -> void:
+	tooltip_timer.stop()
+	GameManager.hide_tooltip.emit()
+
+func _show_tooltip() -> void:
+	GameManager.show_tooltip.emit(tooltip_text)

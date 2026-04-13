@@ -187,15 +187,25 @@ tile_set = SubResource("TileSet_o6xl0")
 
 [node name="Farm" parent="." unique_id=2067046555 instance=ExtResource("1_o5qli")]
 position = Vector2(1344, 947)
+tooltip_text = "Passively yield gold every 5 seconds.
+Tier 1: 5 gold
+Tier 2: 10 gold"
 
 [node name="Mine" parent="." unique_id=610116192 instance=ExtResource("4_jyhfs")]
 position = Vector2(960, 947)
 
 [node name="Market" parent="." unique_id=1313592473 instance=ExtResource("5_tefeu")]
 position = Vector2(576, 947)
+tooltip_text = "Passively yield gold every 5 seconds.
+Tier 1: 7 gold
+Tier 2: 14 gold"
 
 [node name="Guild" parent="." unique_id=1469337441 instance=ExtResource("6_o6xl0")]
 position = Vector2(1728, 947)
 
 [node name="Castle" parent="." unique_id=1912381920 instance=ExtResource("7_tipki")]
 position = Vector2(192, 947)
+tooltip_text = "Multiply the amount of gold you get from mine. 
+And the Main building to upgrade to win the game.
+Tier 1: x2
+Tier 2: x4"

@@ -15,6 +15,10 @@ script = ExtResource("1_uw0k4")
 building_type = 1
 upgrade_costs = Array[int]([75, 300])
 upgrade_button = NodePath("UpgradeButton")
+tooltip_text = "Passively yield gold every 5 seconds
+Tier 1: 7 gold
+Tier 2: 14 gold"
+passive_increment = 7
 timer = NodePath("PassiveIncomeRate")
 gold_spawn_marker = NodePath("GoldSpawnMarker")
 
