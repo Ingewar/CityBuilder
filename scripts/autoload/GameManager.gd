@@ -2,7 +2,9 @@ extends Node
 
 signal gold_changed(new_gold: int)
 signal game_over()
+@warning_ignore("unused_signal")
 signal show_tooltip(text: String)
+@warning_ignore("unused_signal")
 signal hide_tooltip()
 
 @export var gold: int = 50
