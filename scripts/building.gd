@@ -56,7 +56,8 @@ func upgrade():
 		current_tier = tiers[current_tier_index]
 		current_tier.visible = true
 		current_tier.process_mode = Node2D.PROCESS_MODE_INHERIT
-		upgrade_button.set_cost(upgrade_costs[current_tier_index])
+		if current_tier_index < upgrade_costs.size():
+			upgrade_button.set_cost(upgrade_costs[current_tier_index])
 		# Apply building-specific effects on upgrade
 		var tween := create_tween()
 		tween.tween_property(current_tier, "scale", Vector2(1.1, 1.1), 0.1).set_ease(Tween.EASE_OUT)

@@ -1,8 +1,7 @@
 extends Node2D
 
-func _ready() -> void:
-	GameManager.start_play_time()
-	GameManager.game_over.connect(_on_game_over)
+@onready var game_over_timer: Timer = %GameOverTimer
 
-func _on_game_over() -> void:
+func _on_game_over_timer_timeout() -> void:
 	SceneManager.change_scene(SceneManager.Scene.GAME_OVER)
+	GameManager.game_over.emit(0.0)

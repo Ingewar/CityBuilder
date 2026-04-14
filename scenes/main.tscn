@@ -209,3 +209,12 @@ tooltip_text = "Multiply the amount of gold you get from mine.
 And the Main building to upgrade to win the game.
 Tier 1: x2
 Tier 2: x4"
+
+[node name="GameOverTimer" type="Timer" parent="." unique_id=417105985]
+unique_name_in_owner = true
+wait_time = 600.0
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

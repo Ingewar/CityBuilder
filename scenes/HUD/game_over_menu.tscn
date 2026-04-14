@@ -31,21 +31,6 @@ theme_override_font_sizes/font_size = 48
 text = "You Won!"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1744625176]
-layout_mode = 2
-alignment = 1
-
-[node name="PlayTimeLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=987818448]
-layout_mode = 2
-theme_override_font_sizes/font_size = 42
-text = "Your play time:"
-
-[node name="PlayTimeValue" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1326261531]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 42
-text = "0"
-
 [node name="ReplayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1300316920]
 unique_name_in_owner = true
 layout_mode = 2
