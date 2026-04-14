@@ -5,6 +5,8 @@ signal gold_changed(new_gold: int)
 signal show_tooltip(text: String)
 @warning_ignore("unused_signal")
 signal hide_tooltip()
+@warning_ignore("unused_signal")
+signal time_updated(new_time: int)
 
 @export var gold: int = 50
 @export var click_value: int = 1

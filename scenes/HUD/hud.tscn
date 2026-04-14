@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cum0yfanim8g5" path="res://scripts/UI/hud.gd" id="1_c0cnr"]
 [ext_resource type="Texture2D" uid="uid://tvfvqhubu20f" path="res://sprites/coin_gold.png" id="2_glunx"]
+[ext_resource type="Texture2D" uid="uid://pv5efd2s4ua7" path="res://sprites/kenney_platformer-art-buildings/Tiles/clock.png" id="3_epp0c"]
 [ext_resource type="PackedScene" uid="uid://hpcftdycgtpe" path="res://scenes/HUD/tooltip.tscn" id="3_jjobl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0cnr"]
@@ -25,26 +26,53 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c0cnr")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TopBar" unique_id=1939280650]
+[node name="MarginContainer" type="MarginContainer" parent="TopBar" unique_id=1302795409]
 layout_mode = 2
+theme_override_constants/margin_right = 12
 
-[node name="GoldContainer" type="BoxContainer" parent="TopBar/HBoxContainer" unique_id=577744817]
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar/MarginContainer" unique_id=1939280650]
 layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GoldContainer" type="BoxContainer" parent="TopBar/MarginContainer/HBoxContainer" unique_id=577744817]
+layout_mode = 2
+tooltip_text = "Your gold"
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="GoldIcon" type="TextureRect" parent="TopBar/HBoxContainer/GoldContainer" unique_id=609633347]
+[node name="GoldIcon" type="TextureRect" parent="TopBar/MarginContainer/HBoxContainer/GoldContainer" unique_id=609633347]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_glunx")
 
-[node name="GoldValueLabel" type="Label" parent="TopBar/HBoxContainer/GoldContainer" unique_id=1211079170]
+[node name="GoldValueLabel" type="Label" parent="TopBar/MarginContainer/HBoxContainer/GoldContainer" unique_id=1211079170]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 48
 text = "0"
 vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="TopBar/MarginContainer/HBoxContainer" unique_id=1234500001]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimeLeftContainer" type="HBoxContainer" parent="TopBar/MarginContainer/HBoxContainer" unique_id=494446211]
+layout_mode = 2
+tooltip_text = "Time remaining"
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TopBar/MarginContainer/HBoxContainer/TimeLeftContainer" unique_id=1980678281]
+layout_mode = 2
+texture = ExtResource("3_epp0c")
+stretch_mode = 5
+
+[node name="TimeLeftValue" type="Label" parent="TopBar/MarginContainer/HBoxContainer/TimeLeftContainer" unique_id=1409367637]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "9:59"
 
 [node name="Tooltip" parent="." unique_id=1751201188 instance=ExtResource("3_jjobl")]
 visible = false
